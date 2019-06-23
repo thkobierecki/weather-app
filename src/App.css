@@ -1,0 +1,125 @@
+body {
+  background-color: rgb(62, 200, 255);
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.container {
+  width: 70%;
+  height: 80vh;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  color: #fff;
+}
+
+/*=== LEFT SIDE ===*/
+.left-side {
+  background-color: rgb(0, 140, 255);
+  padding: 20px 15px;
+}
+.left-side__container {
+  text-align: center;
+}
+
+.get-city__input {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.726);
+  letter-spacing: 2px;
+}
+
+.get-city__input::placeholder {
+  color: rgba(255, 255, 255, 0.726);
+}
+.get-city__btn {
+  margin-top: 15px;
+  height: 40px;
+  width: 60%;
+  border-radius: 20px;
+  background: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  border: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: ease 0.8s;
+}
+.get-city__btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+}
+
+/*===Current weather===*/
+.current-weather__container {
+  margin-top: 40px;
+  text-align: center;
+}
+.current-weather__city {
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 20px;
+}
+.current-weather__tempt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.current-weather__text {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+}
+.current-weather__date {
+  font-size: 1.5rem;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+}
+/*=== RIGHT SIDE ===*/
+.right-side {
+  background-color: rgb(0, 115, 209);
+}
+
+.forecast_days_container {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 5px;
+}
+.day_weather_container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px dotted rgb(0, 140, 255);
+  padding-bottom: 10px;
+}
+.day_weather_container:last-child {
+  border-bottom: none;
+}
+
+.day_weather_temp {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  justify-items: center;
+  align-items: center;
+}
