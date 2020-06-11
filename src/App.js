@@ -13,33 +13,33 @@ export default class App extends Component {
     date: undefined,
     is_day: undefined,
     forecast_days: undefined,
-    error: undefined
+    error: undefined,
   };
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     const city = e.target.city.value;
 
     const api_call = await fetch(
-      `https://api.apixu.com/v1/forecast.json?key=c34b52130a6540c5b32120528193004&q=${city}&days=5`
+      `http://api.weatherstack.com/forecast?access_key=b9276fcd5a4b134dcfe4f41b921a70ef&query=${city}`
     );
 
     const resp = await api_call.json();
-
+    console.log(resp);
     if (city) {
       this.setState({
-        temp: resp.current.temp_c,
+        temp: resp.current.temperature,
         city_name: resp.location.name,
-        icon: resp.current.condition.icon,
-        description: resp.current.condition.text,
-        date: resp.forecast.forecastday[0].date,
+        icon: resp.current.weather_icons[0],
+        description: resp.current.weather_descriptions,
+        date: resp.forecast["2020-06-10"].date,
         is_day: resp.current.is_day,
-        forecast_days: resp.forecast.forecastday,
-        error: ""
+        forecast_days: [],
+        error: "",
       });
     } else {
       this.setState({
-        error: "Please enter correct valid name of city.."
+        error: "Please enter correct valid name of city..",
       });
     }
     console.log(city);
